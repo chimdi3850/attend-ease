@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc -b ../../packages/api && tsdown",
+    "check-types": "tsc -b ../../packages/api && tsc --noEmit",
+    "compile": "bun build --compile --no-compile-autoload-dotenv --minify --sourcemap --bytecode ./src/index.ts --outfile server",
+    "env:generate": "varlock codegen"
+  },
+  "dependencies": {
+    "@attend-ease/api": "workspace:*",
+    "@attend-ease/auth": "workspace:*",
+    "@attend-ease/db": "workspace:*",
+    "@orpc/openapi": "catalog:",
+    "@orpc/server": "catalog:",
+    "@orpc/zod": "catalog:",
+    "better-auth": "catalog:",
+    "hono": "^4.13.7",
+    "varlock": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@attend-ease/config": "workspace:*",
+    "@attend-ease/infra": "workspace:*",
+    "@cloudflare/workers-types": "catalog:",
+    "@types/node": "^26.4.1",
+    "tsdown": "^0.23.0",
+    "typescript": "catalog:"
+  }
+}

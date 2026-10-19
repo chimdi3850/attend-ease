@@ -1,0 +1,3 @@
+{
+  "extends": "@attend-ease/config/tsconfig.base.json"
+}
